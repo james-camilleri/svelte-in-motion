@@ -20,6 +20,9 @@ importers:
       '@types/eslint':
         specifier: 8.56.0
         version: 8.56.0
+      '@types/reveal.js':
+        specifier: ^4.4.8
+        version: 4.4.8
       '@typescript-eslint/eslint-plugin':
         specifier: ^6.0.0
         version: 6.21.0(@typescript-eslint/parser@6.21.0)(eslint@8.56.0)(typescript@5.3.3)
@@ -44,6 +47,9 @@ importers:
       prettier-plugin-svelte:
         specifier: ^3.1.2
         version: 3.2.1(prettier@3.2.5)(svelte@4.2.11)
+      reveal.js:
+        specifier: ^5.0.4
+        version: 5.0.4
       stylelint:
         specifier: ^16.2.1
         version: 16.2.1(typescript@5.3.3)
@@ -691,6 +697,10 @@ packages:
 
   /@types/pug@2.0.10:
     resolution: {integrity: sha512-Sk/uYFOBAB7mb74XcpizmH0KOR2Pv3D2Hmrh1Dmy5BmK3MpdSa5kqZcg6EKBdklU0bFXX9gCfzvpnyUehrPIuA==}
+    dev: true
+
+  /@types/reveal.js@4.4.8:
+    resolution: {integrity: sha512-ADWVEgRLNVRE+J5yGjFDogsAaeVz+FKRVgvpLk1tgNewocXQd6wuKSknfamCVgZyUY9/IgOlkNKh9a2iIaconA==}
     dev: true
 
   /@types/semver@7.5.7:
@@ -2717,6 +2727,11 @@ packages:
   /reusify@1.0.4:
     resolution: {integrity: sha512-U9nH88a3fc/ekCF1l0/UP1IosiuIjyTh7hBvXVMHYgVcfGvt897Xguj2UOLDeI5BG2m7/uwyaLVT6fbtCwTyzw==}
     engines: {iojs: '>=1.0.0', node: '>=0.10.0'}
+    dev: true
+
+  /reveal.js@5.0.4:
+    resolution: {integrity: sha512-480pVhre9SXWuE4QbDwG0nPrip3TkifflqaKQWF8Ynf4iYIUBfgu5leeMso0srubQsZQ+G2OzktAfAkrvBY0Ww==}
+    engines: {node: '>=18.0.0'}
     dev: true
 
   /rimraf@2.7.1:
