@@ -7,12 +7,15 @@ export async function initialiseReveal() {
   })
 
   deck.initialize({
+    autoPlayMedia: true,
     center: false,
-    preloadIframes: true,
+    controls: false,
     controlsTutorial: true,
     hash: true,
     hashOneBasedIndex: true,
+    height: 1080,
+    preloadIframes: true,
     respondToHashChanges: true,
-    autoPlayMedia: true,
+    width: 1920,
   })
 }
