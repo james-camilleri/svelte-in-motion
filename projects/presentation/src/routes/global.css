@@ -1,0 +1,19 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --svelte-orange: hwb(12deg 26% 2%);
+  --white: rgb(255 255 255);
+
+  margin: 0;
+  font-family: trispace, sans-serif;
+}
+
+@font-face {
+  font-family: trispace;
+  src: url('/trispace.woff2') format('woff2');
+  font-display: swap;
+}
