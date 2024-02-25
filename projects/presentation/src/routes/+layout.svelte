@@ -1,14 +1,21 @@
 <script lang="ts">
-  import './global.css'
+  import '../styles/global.css'
+  import '../styles/syntax-highlight.css'
   import 'reveal.js/dist/reveal.css'
-  // import 'reveal.js/dist/theme/night.css'
 
   import { browser } from '$app/environment'
-  import Background from '$lib/components/layout/Background.svelte'
-  import { initialiseReveal } from '$lib/utils'
+  import Background from '$lib/components/layout/background/Background.svelte'
+  import { initialiseReveal, slideState } from '$lib/reveal'
 
   if (browser) {
-    initialiseReveal()
+    initialiseReveal().then((Reveal) => {
+      Reveal.on('slidechanged', (event) => {
+        slideState.set({
+          currentSlide: event.currentSlide,
+          slideIndex: event.indexh,
+        })
+      })
+    })
   }
 </script>
 
