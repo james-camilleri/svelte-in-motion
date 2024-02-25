@@ -10,8 +10,11 @@ const config = {
   kit: {
     adapter: adapter(),
     alias: {
-      $assets: '/src/assets/*',
+      $assets: 'src/assets/*',
     },
+  },
+  ssr: {
+    noExternal: ['three'],
   },
 }
 
