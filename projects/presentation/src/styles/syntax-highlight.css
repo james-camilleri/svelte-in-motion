@@ -1,0 +1,80 @@
+.reveal pre {
+  font-size: 2rem;
+  font-weight: 400;
+  line-height: 1.3;
+  box-shadow: none;
+}
+
+.hljs {
+  /* --r-code-font: 'fira go'; */
+}
+
+.hljs-keyword {
+  font-weight: 500;
+  color: var(--light);
+}
+
+.hljs-built_in {
+  font-weight: 200;
+  color: var(--pink);
+}
+
+.hljs-literal {
+  /* font-weight: 300; */
+  color: #ff8080;
+}
+
+.hljs-symbol {
+  /* font-weight: 300; */
+  color: #58e55a;
+}
+
+.hljs-comment {
+  font-weight: 100;
+  color: var(--svelte-orange-semi);
+}
+
+.hljs-string,
+.hljs-number {
+  color: var(--yellow-orange);
+}
+
+.hljs-title {
+  font-weight: 500;
+  color: var(--svelte-orange);
+}
+
+.hljs-attribute,
+.hljs-selector-tag,
+.hljs-doctag,
+.hljs-name,
+.hljs-bullet,
+.hljs-code,
+.hljs-addition,
+.hljs-regexp,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-link,
+.hljs-selector-attr,
+.hljs-selector-pseudo,
+.hljs-type,
+.hljs-selector-id,
+.hljs-selector-class,
+.hljs-quote,
+.hljs-template-tag,
+.hljs-deletion,
+.hljs-section,
+.hljs-function,
+.hljs-meta .hljs-keyword,
+.hljs-meta,
+.hljs-subst {
+  color: var(--grey);
+}
+
+.hljs-emphasis {
+  font-style: italic;
+}
+
+.hljs-strong {
+  font-weight: bold;
+}

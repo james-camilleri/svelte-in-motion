@@ -1,0 +1,44 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --svelte-orange: hsl(12deg 95% 62%);
+  --svelte-orange-semi: hsl(12deg 95% 62% / 60%);
+  --yellow-orange: hsl(32deg 95% 62%);
+  --dark-orange: hsl(12deg 95% 10%);
+  --pink: rgb(249 8 80);
+  --light: rgb(255 255 255);
+  --grey: rgb(200 200 200);
+  --dark: rgb(20 20 20);
+  --black: rgb(0 0 0);
+  --primary: var(--svelte-orange);
+
+  margin: 0;
+  font-family: trispace, sans-serif;
+}
+
+::selection {
+  background-color: var(--pink);
+}
+
+code {
+  font-family: 'fira code', monospace;
+  font-feature-settings: 'calt';
+  font-variant-ligatures: contextual;
+  color: var(--grey);
+}
+
+@font-face {
+  font-family: trispace;
+  src: url('/trispace.woff2') format('woff2');
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'fira code';
+  src: url('/fira-code.woff2') format('woff2');
+  font-display: swap;
+}
