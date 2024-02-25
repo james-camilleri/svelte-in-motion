@@ -1,10 +1,13 @@
 # Svelte in Motion
+
 Procedurally-generated video using everyone's favourite framework and ungodly hackery.
 
 ## Outline
+
 - hello
 - short intro
   - james
+  - front-end dev, have been doing it for a while
   - originally from Malta, been in London a few years
   - overlay Malta on London map
   - first exposed to front-end dev through neopets (picture of Kau) and I apparently enjoyed the ride
@@ -46,6 +49,5 @@ Procedurally-generated video using everyone's favourite framework and ungodly ha
   - here's one I made earlier
   - we can also pair this with cool stuff like svelte cubed to create some very nifty clips
   - (let me know if you need a hand with the next svelte summit titles)
-
 
 Disclaimer: This is not a product, library, or project, in any way shape or form. It is a haphazard collection of hackery and botches that did what I needed it to do at the time. You are free to use and abuse it as you see fit, but I would hardly call it a production-ready solution.
