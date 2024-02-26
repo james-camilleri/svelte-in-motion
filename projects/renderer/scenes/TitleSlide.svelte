@@ -44,34 +44,37 @@
 </script>
 
 <main>
-  <h1 style:left="{$nameCoords.x}vw" style:top="{$nameCoords.y}vh">{name.replace('%', '\n')}</h1>
-  <h2 style:left="{$titleCoords.x}vw" style:top="{$titleCoords.y}vh">
-    <span>{title.split(' – ')[0]}</span><br />
-    {#each title.split(' – ').slice(1) as subtitle}
-      <span>{subtitle}</span><br />
-    {/each}
-  </h2>
+  <h1 style:left="{$nameCoords.x}vw" style:top="{$nameCoords.y}vh">{name}</h1>
+  <h2 style:left="{$titleCoords.x}vw" style:top="{$titleCoords.y}vh">{title}</h2>
+
+  <!-- Bottom-most colour. -->
   <Wipe colour={colours[0]} from="left" start={START} rotation={randomIntBetween(random, 3, 15)} />
+
+  <!-- Second edge colour. -->
   <WipeWithEdge
     colour={colours[1]}
-    from="left"
     offset={randomBetween(random, 3, 7)}
-    start={START + 20}
     rotation={randomBetween(random, 3, 15)}
+    start={START + 20}
+    from="left"
   />
+
+  <!-- Main background with particle/rain effect. -->
   <WipeWithParticles
     colour="--light"
-    particleColours={[colours[0], colours[1]]}
     from="left"
     offset={randomBetween(random, 10, 15)}
-    start={START + 40}
+    particleColours={[colours[0], colours[1]]}
     rotation={randomBetween(random, 3, 15)}
+    start={START + 40}
   />
+
+  <!-- Bouncing circles. -->
   <Bubble
     x={randomBetween(random, 80, 90)}
     y={randomBetween(random, 40, 60)}
-    rotationDirection={random() > 0.5 ? 1 : -1}
     start={START + 600}
+    rotationDirection={random() > 0.5 ? 1 : -1}
     foreground={{
       colour: colours[2],
       size: randomBetween(random, 20, 30),
@@ -89,6 +92,8 @@
       distance: randomBetween(random, 25, 30),
     }}
   />
+
+  <!-- Wipe to black. -->
   <Wipe colour="--black" from="left" start={toMs(Number(length) - 2)} rotation={randomIntBetween(random, 3, 15)} />
 </main>
 
@@ -145,9 +150,5 @@
     text-transform: lowercase;
     white-space: pre;
     transform: translate(-100%);
-
-    > span:not(:first-child) {
-      font-style: italic;
-    }
   }
 </style>
