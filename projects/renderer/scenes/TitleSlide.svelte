@@ -4,19 +4,34 @@
   import { seededRandom, randomBetween, randomIntBetween, shuffle } from '$lib/random'
   import { toMs } from '$lib/units'
 
+  // [svelte-meetup]
+  // Subcomponents for all the various fiddly animated bits.
+  // They're in a bit of a state, apologies.TitleSlide
+
   import Bubble from './subcomponents/Bubble.svelte'
   import Wipe from './subcomponents/Wipe.svelte'
   import WipeWithEdge from './subcomponents/WipeWithEdge.svelte'
   import WipeWithParticles from './subcomponents/WipeWithParticles.svelte'
 
+  // [svelte-meetup]
+  // These props should be passed in via query parameters, but setting defaults
+  // is useful so that the whole thing doesn't blow up while experimenting.
   export let name: string
   export let title: string
   export let length = '13'
 
   const START = 1000
 
+  // [svelte-meetup]
+  // Get a random number generator with stable outputs, based on the inputs to this scene.
+  // Changing these props will change the random numbers generated.
   const random = seededRandom(`${name}-${title}`)
 
+  // [svelte-meetup]
+  // Svelte's excellent spring and tween stores can be used to get some nice and
+  // natural motion without faffing around with lots of manual keyframing and pain.
+  // Important to note that CSS animations aren't really usable in this process,
+  // as they don't use the JS clock.
   const nameCoords = spring(
     { x: -50, y: 49 },
     {
@@ -32,8 +47,13 @@
     },
   )
 
+  // [svelte-meetup]
+  // We can get a random variation of colour palette using the shuffle function too.
   const colours = shuffle(random, ['--svelte-orange', '--yellow-orange', '--dark-orange', '--yellow', '--pink'])
 
+  // [svelte-meetup]
+  // setTimeouts allow for scheduling things at particular points of the animation. As the
+  // main clock is overridden by a fake timer in render mode, these will work as expected.
   setTimeout(() => {
     nameCoords.set({ x: 50, y: 49 })
   }, START + 300)
@@ -98,6 +118,9 @@
 </main>
 
 <style lang="scss">
+  // [svelte-meetup]
+  // We can style all the shapes and text with CSS – no buttons or annoying interfaces :).
+
   @font-face {
     font-family: josefin-sans;
     src: url('$assets/fonts/josefin-sans.woff2') format('woff2');

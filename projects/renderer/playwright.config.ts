@@ -2,6 +2,10 @@ import { type PlaywrightTestConfig, devices } from '@playwright/test'
 
 const PORT = 4173
 
+// [svelte-meetup]
+// Set the compilation process as a global teardown,
+// so it executes after all the frames have rendered.
+
 const config: PlaywrightTestConfig = {
   globalTeardown: './src/render/compileFrames',
   fullyParallel: true,

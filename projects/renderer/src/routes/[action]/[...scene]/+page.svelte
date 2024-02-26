@@ -6,6 +6,10 @@
   import { setResolution } from '$lib/units'
   import * as scenes from '$scenes'
 
+  // [svelte-meetup]
+  // Pull the scene name and current frame from the URL, and use
+  // that to load the correct scene component and set the clock manually.
+
   const { params, url } = $page
   const [sceneName, frame] = params.scene.split('/')
   const scene = scenes[sceneName]

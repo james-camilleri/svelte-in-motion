@@ -7,6 +7,11 @@ import { config, renders } from './config.js'
 const OUTPUT_DIR = 'output'
 const TRANSPARENT_BACKGROUND = false
 
+// [svelte-meetup]
+// This bit just calls FFMPEG with the flags needed to glue the frames together,
+// as well as add audio if available. These flags can be tweaked to adjust
+// the video format and add any additional FFMPEG processing.
+
 export default async function teardown() {
   let i = -1
   console.log()

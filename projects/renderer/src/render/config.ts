@@ -1,5 +1,11 @@
 import type { RenderConfig } from './types'
 
+// [svelte-meetup]
+// The driving config for the renders. Will render a video for each "data" variant
+// of each scene (or just the scene if no data exists). The properties in "data",
+// excluding `length`, `audio`, `audioOffset` and `skip`, are passed to the scene
+// component as props.
+
 export const config: RenderConfig = {
   resolution: {
     width: 1920,
@@ -23,6 +29,8 @@ export const config: RenderConfig = {
   },
 }
 
+// [svelte-meetup]
+// This function just flattens the config into something that can be used to spin up the individual tests.
 export function renders() {
   return Object.entries(config.scenes)
     .map(

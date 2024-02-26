@@ -4,6 +4,9 @@
   import { page } from '$app/stores'
   import { clock } from '$lib/clock'
 
+  // [svelte-meetup]
+  // Install a fake controllable clock for the rendering process.
+
   if ($page.params.action === 'render' && !$clock) {
     $clock = FakeTimers.install()
   }

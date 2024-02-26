@@ -1,3 +1,7 @@
+// [svelte-meetup]
+// This is where all the random functions live. They're used to create
+// random but static values for driving variations of scenes.
+
 type RandomNumberGenerator = () => number
 
 /**

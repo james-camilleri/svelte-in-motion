@@ -11,6 +11,9 @@ renders().forEach(({ scene, filename, query, length, skip }, i) => {
     return
   }
 
+  // [svelte-meetup]
+  // Create a test for each frame, load and screenshot.
+
   /* Render the individual frames:
    * - navigate to the correct scene and frame using the URL.
    * - set the correct size and wait for the page to scale
