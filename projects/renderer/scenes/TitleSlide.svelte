@@ -9,8 +9,8 @@
   import WipeWithEdge from './subcomponents/WipeWithEdge.svelte'
   import WipeWithParticles from './subcomponents/WipeWithParticles.svelte'
 
-  export let name: string
-  export let title: string
+  export let name = 'James Camilleri'
+  export let title = 'wizard (in training)'
   export let length = '13'
 
   const START = 1000
