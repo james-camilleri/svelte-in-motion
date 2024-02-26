@@ -16,8 +16,8 @@
   // [svelte-meetup]
   // These props should be passed in via query parameters, but setting defaults
   // is useful so that the whole thing doesn't blow up while experimenting.
-  export let name: string
-  export let title: string
+  export let name = 'James Camilleri'
+  export let title = 'wizard (in training)'
   export let length = '13'
 
   const START = 1000
