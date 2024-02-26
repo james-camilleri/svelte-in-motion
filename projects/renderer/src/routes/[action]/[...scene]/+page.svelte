@@ -7,11 +7,6 @@
   import * as scenes from '$scenes'
 
   const { params, url } = $page
-  try {
-    const [sceneName, frame] = params.scene.split('/')
-  } catch {
-    throw new Error(JSON.stringify(params))
-  }
   const [sceneName, frame] = params.scene.split('/')
   const scene = scenes[sceneName]
   const props = Object.fromEntries(url.searchParams)
