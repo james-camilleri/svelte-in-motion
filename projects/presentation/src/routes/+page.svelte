@@ -152,9 +152,13 @@
 <Slide title="demo/walkthrough time" subtitle="But first, a silent offering to the demo gods." />
 
 <!-- FIN. -->
-<Slide title="that's all folks" subtitle="Thanks for all the fish.">
+<Slide title="that's all folks" subtitle="Thanks for all the ~~fish~~ pizza.">
   <p>
     github.com/james-camilleri<br />
     james@james.mt<br />
+  </p>
+  <p>
+    <strong>repo for this talk:</strong><br />
+    github.com/james-camilleri/svelte-in-motion
   </p>
 </Slide>
