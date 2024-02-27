@@ -1,3 +1,5 @@
+import type { SeededRandom } from './random'
+
 import { writable } from 'svelte/store'
 
 export async function initialiseReveal() {
@@ -10,7 +12,7 @@ export async function initialiseReveal() {
     controls: true,
     controlsTutorial: false,
     hash: true,
-    hashOneBasedIndex: true,
+    hashOneBasedIndex: false,
     height: 1080,
     plugins: [RevealHighlight],
     preloadIframes: true,
@@ -24,4 +26,5 @@ export async function initialiseReveal() {
 export const slideState = writable<{
   currentSlide?: HTMLElement
   slideIndex?: number
+  random?: SeededRandom
 }>({})
