@@ -45,7 +45,7 @@ Procedurally-generated video using everyone's favourite framework and ungodly ha
 - adding pizazz / multiple universes - controlled randomness
   - technique really shines when you need to produce multiple variations of a thing (title cards for example)
   - using the same template and some parametrised components we can generate variations of the same video using a different random seed
-  - ant parameters can be passed through the URL, just like the frame number
+  - any parameters can be passed through the URL, just like the frame number
   - here's one I made earlier
   - we can also pair this with cool stuff like svelte cubed to create some very nifty clips
   - (let me know if you need a hand with the next svelte summit titles)
