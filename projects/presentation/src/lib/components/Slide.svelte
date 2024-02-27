@@ -1,4 +1,6 @@
 <script lang="ts">
+  import SvelteMarkdown from 'svelte-markdown'
+
   export let title = ''
   export let subtitle = ''
 
@@ -12,13 +14,6 @@
 
   export let iframe = ''
 
-  // export let large = false
-  // export let contain = false
-  // export let animate = false
-  // export let loop = false
-  // export let video = ''
-  // export let caption: string | string[] | undefined = undefined
-
   const dataAttributes = {
     'data-transition': 'zoom',
     ...(iframe
@@ -29,25 +24,6 @@
         }
       : undefined),
   }
-  // const dataAttributes = image
-  //   ? {
-  //       'data-background-image': image,
-  //       'data-background-size': contain ? 'contain' : 'cover',
-  //     }
-  //   : video
-  //     ? {
-  //         'data-background-video': video,
-  //         'data-background-video-loop': loop || undefined,
-  //       }
-  //     : iframe
-  //       ? {
-  //           'data-preload': true,
-  //           'data-background-iframe': iframe,
-  //           'data-background-interactive': true,
-  //         }
-  //       : {
-  //           'data-auto-animate': animate || undefined,
-  //         }
 </script>
 
 <section {...dataAttributes} class:dark>
@@ -55,7 +31,9 @@
     <h1>{title}</h1>
   {/if}
   {#if subtitle}
-    <p class="subtitle" class:subtitle-only={!title}>{subtitle}</p>
+    <p class="subtitle" class:subtitle-only={!title}>
+      <SvelteMarkdown source={subtitle} isInline />
+    </p>
   {/if}
   {#if image}
     <div class="img-wrapper">
@@ -114,6 +92,10 @@
     font-variation-settings:
       'wght' 300,
       'wdth' 100;
+
+    :global(del) {
+      text-decoration-thickness: 10%;
+    }
 
     &::before {
       position: absolute;
