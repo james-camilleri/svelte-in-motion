@@ -10,6 +10,9 @@
   import Neopets from '$assets/neopets.png'
   import PlaywrightLogo from '$assets/playwright-logo.svg'
   import Rotoscope from '$assets/rotoscope.gif'
+  import TitleSlideExampleUrl from '$assets/title-slide-example-url.png'
+  import TitleSlideExample from '$assets/title-slide-example.png'
+  import VideoVariations from '$assets/video-variations.png'
   import Arrow from '$lib/components/Arrow.svelte'
   import Slide from '$lib/components/Slide.svelte'
 
@@ -46,7 +49,7 @@
     'https://artwilton.medium.com/after-effects-expression-basics-wiggle-b3dab195a1f0',
   ]}
 />
-<Slide title="what if? (???)" subtitle="What if we cut out the middle man (/men/people)?" />
+<Slide title="what if? (???)" subtitle="What if we cut out the middleman (/men/people)?" />
 <Slide title="video through code" subtitle="Creating actual usable video files with front-end development tools." />
 <Slide iframe="https://www.remotion.dev/" />
 <Slide title="react?" subtitle=":(" dark />
@@ -124,7 +127,7 @@
     <strong>3.</strong> How do make it into a usable video file?
   </p>
 </Slide>
-<Slide code={FFmpeg} />
+<Slide image={FFmpeg} />
 <Slide code={FFmpegConfig} />
 
 <Slide title="problems" subtitle="Never a dull moment.">
@@ -136,8 +139,22 @@
 </Slide>
 
 <!-- PARAMETRISED/PROCEDURAL VIDEO -->
-<Slide title="PRNG" subtitle="pseudo-random number generators" />
-
+<Slide title={`"data-driven" video`} subtitle="Dynamically creating video variants." />
+<Slide image={TitleSlideExample} />
+<Slide image={TitleSlideExampleUrl} noResize />
+<Slide title="procedural generation" subtitle="Oh the possibilities." />
+<Slide image={VideoVariations} />
 <Slide title="PRNGs" subtitle="(Pseudo-random number generators.)" />
 <Slide code={SplitMix32} />
 <Slide code={PrngInUse} />
+
+<!-- DEMO -->
+<Slide title="demo/walkthrough time" subtitle="But first, a silent offering to the demo gods." />
+
+<!-- FIN. -->
+<Slide title="that's all folks" subtitle="Thanks for all the fish.">
+  <p>
+    github.com/james-camilleri<br />
+    james@james.mt<br />
+  </p>
+</Slide>

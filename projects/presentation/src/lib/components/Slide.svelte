@@ -4,6 +4,7 @@
 
   export let image = ''
   export let imageFrame = true
+  export let noResize = false
   export let attribution: undefined | string | [string, string] = undefined
 
   export let code = ''
@@ -58,7 +59,7 @@
   {/if}
   {#if image}
     <div class="img-wrapper">
-      <div class="img-inner-wrapper" class:frame={imageFrame}>
+      <div class="img-inner-wrapper" class:frame={imageFrame} class:no-resize={noResize}>
         <img src={image} class:frame={imageFrame} />
         <div class="img-drop-shadow" class:frame={imageFrame} />
 
@@ -137,11 +138,9 @@
 
   .img-inner-wrapper {
     position: relative;
-    height: 90%;
 
-    &.frame {
-      outline: solid var(--dark) 3px;
-      outline-offset: -3px;
+    &:not(.no-resize) {
+      height: 90%;
     }
   }
 
@@ -170,8 +169,14 @@
   }
 
   img {
-    max-width: 80vw;
+    width: 100%;
     height: 100%;
+    object-fit: contain;
+
+    &.frame {
+      outline: solid var(--dark) 3px;
+      outline-offset: -3px;
+    }
   }
 
   .attribution {
