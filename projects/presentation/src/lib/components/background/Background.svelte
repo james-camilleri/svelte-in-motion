@@ -14,6 +14,9 @@
   const NO_OF_RAYS = 23
   const RAY_WIDTH = 1.5
 
+  // Hide the background shapes for these slides.
+  const HIDE_SHAPES = new Set([13, 14])
+
   const svgSize = NO_OF_CIRCLES * INNER_RADIUS
 
   let dark: boolean
@@ -21,6 +24,8 @@
     const slide = $slideState?.currentSlide
     dark = !!(slide?.classList.contains('dark') || slide?.querySelector('code'))
   }
+
+  $: random = $slideState.random
 </script>
 
 <div class="background" class:dark>
@@ -48,9 +53,11 @@
     {/each}
   </svg>
 
-  <Canvas>
-    <Shapes />
-  </Canvas>
+  <div class="canvas" class:hidden={$slideState.slideIndex && HIDE_SHAPES.has($slideState.slideIndex)}>
+    <Canvas>
+      <Shapes {dark} {random} />
+    </Canvas>
+  </div>
 </div>
 
 <style lang="css">
@@ -93,5 +100,18 @@
 
   .background.dark svg {
     opacity: 0.3;
+  }
+
+  .canvas {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+
+    transition: opacity 1s ease-in-out;
+
+    &.hidden {
+      opacity: 0;
+    }
   }
 </style>
