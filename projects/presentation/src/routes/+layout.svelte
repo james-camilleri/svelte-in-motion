@@ -4,7 +4,8 @@
   import 'reveal.js/dist/reveal.css'
 
   import { browser } from '$app/environment'
-  import Background from '$lib/components/layout/background/Background.svelte'
+  import Background from '$lib/components/background/Background.svelte'
+  import { SeededRandom } from '$lib/random'
   import { initialiseReveal, slideState } from '$lib/reveal'
 
   if (browser) {
@@ -13,6 +14,7 @@
         slideState.set({
           currentSlide: event.currentSlide,
           slideIndex: event.indexh,
+          random: new SeededRandom(event.currentSlide.innerHTML),
         })
       })
     })
