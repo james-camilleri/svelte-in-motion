@@ -80,13 +80,19 @@
     <pre><code class="language-ts" data-trim>{code}</code></pre>
   {/if}
 
-  <slot />
+  <div class="content-wrapper">
+    <slot />
+  </div>
 </section>
 
 <style lang="scss">
   section {
     position: relative;
     height: 100%;
+    font-size: 2.5rem;
+    font-variation-settings:
+      'wght' 400,
+      'wdth' 82;
     text-align: start;
   }
 
@@ -103,7 +109,7 @@
     position: relative;
     display: inline;
     margin-inline-start: 1.2rem;
-    font-size: 2em;
+    font-size: 2rem;
     font-variation-settings:
       'wght' 300,
       'wdth' 100;
@@ -164,6 +170,7 @@
   }
 
   img {
+    max-width: 80vw;
     height: 100%;
   }
 
@@ -171,8 +178,10 @@
     position: absolute;
     bottom: 1em;
     left: 1em;
+    font-size: 1rem;
     font-weight: 200;
     color: var(--dark);
+    text-shadow: 1px 1px rgb(127 127 127 / 70%);
 
     span:nth-child(2) {
       font-weight: 500;
@@ -194,5 +203,21 @@
   code {
     min-height: auto !important; /* Override reveal.js style. */
     margin: auto 0;
+  }
+
+  .content-wrapper {
+    margin-block-start: 5rem;
+
+    :global(p) {
+      max-width: 70vw;
+      margin-inline-start: 1rem;
+      line-height: 1.4;
+    }
+
+    :global(strong) {
+      font-variation-settings:
+        'wght' 550,
+        'wdth' 82;
+    }
   }
 </style>
