@@ -66,7 +66,6 @@
 
 <style lang="scss">
   section {
-    position: relative;
     height: 100%;
     font-size: 2.5rem;
     font-variation-settings:
